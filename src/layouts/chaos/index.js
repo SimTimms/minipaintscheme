@@ -29,6 +29,8 @@ import kneeIcon from '../../assets/kneeicon.jpg';
 import muzzleIcon from '../../assets/muzzleicon.jpg';
 import fistIcon from '../../assets/fisticon.jpg';
 import trimIcon from '../../assets/trimicon.jpg';
+import quart2Icon from '../../assets/quart2icon.jpg';
+import quart3Icon from '../../assets/quart3icon.jpg';
 import missilesIcon from '../../assets/missilesicon.jpg';
 import jewelIcon from '../../assets/jewelicon.jpg';
 import eyesIcon from '../../assets/eyesicon.jpg';
@@ -70,61 +72,61 @@ const colors = {
 
 export function Chaos() {
   const [primary, setPrimary] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [quart2, setQuart2] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [quart3, setQuart3] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [trim, setTrim] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [rope, setRope] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [aquila, setAquila] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [penant, setPenant] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [jewel, setJewel] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [skull, setSkull] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [gunbelts, setGunbelts] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [fist, setFist] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [knee, setKnee] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [helmet, setHelmet] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [eyes, setEyes] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [missiles, setMissiles] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [base, setBase] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [bronze, setBronze] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [grass, setGrass] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [muzzle, setMuzzle] = React.useState(
-    'hue-rotate(40deg) brightness(80%) saturate(0%)',
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
   const [part, setPart] = React.useState(0);
 
@@ -218,97 +220,97 @@ export function Chaos() {
         >
           <img
             src={primayIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(0)}
           />
           <img
-            src={primayIcon}
-            style={{ width: 80, margin: 2 }}
+            src={quart2Icon}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(17)}
           />
           <img
-            src={primayIcon}
-            style={{ width: 80, margin: 2 }}
+            src={quart3Icon}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(18)}
           />
           <img
             src={trimIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(1)}
           />
           <img
             src={fistIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(15)}
           />
           <img
             src={kneeIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(16)}
           />
           <img
             src={aquilaIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(2)}
           />
           <img
             src={ropeIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(3)}
           />
           <img
             src={pendantIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(4)}
           />
           <img
             src={jewelIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(5)}
           />
           <img
             src={skullsIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(6)}
           />
           <img
             src={gunbeltIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(7)}
           />
           <img
             src={muzzleIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(14)}
           />
           <img
             src={bronzeIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(13)}
           />
           <img
             src={helmetIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(8)}
           />
           <img
             src={eyesIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(9)}
           />
           <img
             src={missilesIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(10)}
           />
           <img
             src={baseIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(11)}
           />
           <img
             src={grassIcon}
-            style={{ width: 80, margin: 2 }}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(12)}
           />
         </div>
