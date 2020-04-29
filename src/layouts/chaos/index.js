@@ -113,6 +113,9 @@ export function Chaos() {
   const [eyes, setEyes] = React.useState(
     'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
+  const [highlight, setHighlight] = React.useState(
+    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+  );
   const [missiles, setMissiles] = React.useState(
     'hue-rotate(40deg) brightness(50%) saturate(200%)',
   );
@@ -186,6 +189,9 @@ export function Chaos() {
       case 18:
         setQuart3(color);
         break;
+      case 19:
+        setHighlight(color);
+        break;
       default:
         setPrimary(color);
         break;
@@ -214,7 +220,6 @@ export function Chaos() {
             background: '#222',
             display: 'flex',
             flexDirection: 'column',
-
             overflow: 'auto',
           }}
         >
@@ -232,6 +237,12 @@ export function Chaos() {
             src={quart3Icon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
             onClick={() => setPart(18)}
+          />
+
+          <img
+            src={quart3Icon}
+            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+            onClick={() => setPart(19)}
           />
           <img
             src={trimIcon}
@@ -483,6 +494,7 @@ export function Chaos() {
               src={chaosSecondary}
               style={{ maxWidth: 300, filter: trim, position: 'absolute' }}
             />
+
             <img
               src={aquilaImg}
               style={{ maxWidth: 300, filter: aquila, position: 'absolute' }}
