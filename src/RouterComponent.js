@@ -1,13 +1,6 @@
 import React from 'react';
-import { AboutLayoutFrame } from './layouts';
-import AppLayout from './layouts/app';
 import { Chaos } from './layouts/chaos';
-import PreviewLayout from './layouts/preview';
-import { PublicLayout } from './layouts/public';
-import MessagesLayout from './layouts/messages';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import MessageLayout from './layouts/message';
-import RolesLayout from './layouts/roles';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
@@ -44,48 +37,9 @@ function RouterComponent(props) {
   return (
     <ThemeProvider theme={theme}>
       <Switch>
-        {authToken && (
-          <Route
-            path="/app/:page/:pathParam?"
-            render={(props) => <AppLayout {...props} theme={theme} />}
-          />
-        )}
-        {authToken && (
-          <Route
-            path="/preview/:pathParam?"
-            render={(props) => <PreviewLayout {...props} theme={theme} />}
-          />
-        )}
-        {authToken && (
-          <Route
-            path="/messages/:page/:pathParam?"
-            render={(props) => <MessagesLayout {...props} />}
-          />
-        )}
-        {authToken && (
-          <Route
-            path="/roles/:page/:pathParam?"
-            render={(props) => <RolesLayout {...props} />}
-          />
-        )}
-        {authToken && (
-          <Route
-            path="/message/:page/:pathParam?"
-            render={(props) => <MessageLayout {...props} />}
-          />
-        )}
-        <Route path="/chaos">
+        <Route path="/">
           <Chaos />
         </Route>
-        <Route path="/about">
-          <AboutLayoutFrame />
-        </Route>
-        <Route
-          path="/:page/:token"
-          render={(props) => <PublicLayout {...props} />}
-        />
-        <Route path="/:page" render={(props) => <PublicLayout {...props} />} />
-        <Route path="/" render={(props) => <PublicLayout {...props} />} />
       </Switch>
     </ThemeProvider>
   );

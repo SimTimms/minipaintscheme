@@ -70,61 +70,61 @@ const colors = {
 
 export function Chaos() {
   const [primary, setPrimary] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [quart2, setQuart2] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [quart3, setQuart3] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [trim, setTrim] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [rope, setRope] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [aquila, setAquila] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [penant, setPenant] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [jewel, setJewel] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [skull, setSkull] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [gunbelts, setGunbelts] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [fist, setFist] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [knee, setKnee] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [helmet, setHelmet] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [eyes, setEyes] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [missiles, setMissiles] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [base, setBase] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [bronze, setBronze] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [grass, setGrass] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [muzzle, setMuzzle] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+    'hue-rotate(40deg) brightness(80%) saturate(0%)',
   );
   const [part, setPart] = React.useState(0);
 
