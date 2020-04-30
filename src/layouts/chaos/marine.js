@@ -39,8 +39,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.primary,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
 
@@ -50,8 +50,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.quart2,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
 
@@ -61,8 +61,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.quart3,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -71,8 +71,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.left,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -81,8 +81,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.trim,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
 
@@ -92,8 +92,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.aquila,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -102,8 +102,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.knee,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -112,8 +112,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.rope,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -122,8 +122,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.penant,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -132,8 +132,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.jewel,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -142,8 +142,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.helmet,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -152,8 +152,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.eyes,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -162,8 +162,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.skull,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -172,8 +172,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.missiles,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -182,8 +182,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.gunbelts,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -192,8 +192,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.bronze,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -202,8 +202,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.muzzle,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -212,8 +212,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.fist,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -222,8 +222,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.base,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
       <img
@@ -232,8 +232,8 @@ export function Marine({ scheme, modelSize }) {
           maxWidth: modelSize,
           filter: scheme.grass,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          top: 'auto',
+          left: 'auto',
         }}
       />
     </div>

@@ -27,6 +27,8 @@ import baseIcon from '../../assets/baseicon.jpg';
 import { PaintPot } from './Paint';
 import { Marine } from './marine';
 import { ChaosMarine } from './chaos';
+import chaosmarine from '../../assets/chaosmarine.png';
+import marine from '../../assets/marine.png';
 
 const colors = {
   blue: 'hue-rotate(40deg) brightness(50%) saturate(200%)',
@@ -61,6 +63,7 @@ const colors = {
 const initialColour =
   'hue-rotate(40deg) brightness(50%) saturate(0%) contrast(50%)';
 export function Chaos() {
+  const [model, setModel] = React.useState('marine');
   const [scheme, setScheme] = React.useState(
     JSON.parse(localStorage.getItem('theme')) || {
       primary: initialColour,
@@ -293,6 +296,7 @@ export function Chaos() {
               color={colors.warplock}
               setColor={setColor}
             />
+            {/*}
             <img
               src={paintImg}
               style={{ filter: colors.teal, width: 40 }}
@@ -367,10 +371,38 @@ export function Chaos() {
               src={paintImg}
               style={{ filter: colors.black, width: 40 }}
               onClick={() => setColor(colors.black)}
+          />*/}
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+            }}
+          >
+            <img
+              src={marine}
+              style={{
+                width: 80,
+                padding: 10,
+                margin: 10,
+              }}
+              onClick={() => setModel('marine')}
+            />
+            <img
+              src={chaosmarine}
+              style={{ width: 80, padding: 10, margin: 10 }}
+              onClick={() => setModel('chaos')}
             />
           </div>
-          <ChaosMarine scheme={scheme} modelSize={modelSize} />
-          <Marine scheme={scheme} modelSize={modelSize} />
+          {model === 'chaos' ? (
+            <ChaosMarine scheme={scheme} modelSize={modelSize} />
+          ) : (
+            <Marine scheme={scheme} modelSize={modelSize} />
+          )}
         </div>
       </div>
     </div>
