@@ -1,28 +1,14 @@
-import React from 'react';
-import chaos from '../../assets/agressor.png';
-import chaosSecondary from '../../assets/agressor-trim.png';
-import ropeImg from '../../assets/agressor-rope.png';
-import aquilaImg from '../../assets/agressor-aquila.png';
-import penantImg from '../../assets/agressor-penant.png';
-import jewelImg from '../../assets/agressor-jewel.png';
-import skullImg from '../../assets/agressor-skulls.png';
-import gunbeltsImg from '../../assets/agressor-gunbelts.png';
-import helmetImg from '../../assets/agressor-helmet.png';
-import quart2Img from '../../assets/quart2.png';
-import quart3Img from '../../assets/quart3.png';
-import eyesImg from '../../assets/agressor-eyes.png';
-import missilesImg from '../../assets/agressor-missiles.png';
-import grassImg from '../../assets/agressor-grass.png';
-import baseImg from '../../assets/agressor-base.png';
-import fistImg from '../../assets/fist.png';
+import React, { useEffect } from 'react';
+
+import orcImg from '../../assets/orc-primary.png';
+import orcPenant from '../../assets/orc-penant.png';
+import orcTrim from '../../assets/orc-trim.png';
 import paintImg from '../../assets/paint.png';
-import muzzleImg from '../../assets/muzzle.png';
-import bronzeImg from '../../assets/bronze.png';
-import kneeImg from '../../assets/knee.png';
 import aquilaIcon from '../../assets/aquilaicon.jpg';
 import ropeIcon from '../../assets/ropeicon.jpg';
 import pendantIcon from '../../assets/pendanticon.jpg';
 import skullsIcon from '../../assets/skullsicon.jpg';
+import leftIcon from '../../assets/leftshouldericon.jpg';
 import primayIcon from '../../assets/primaryicon.jpg';
 import helmetIcon from '../../assets/helmeticon.jpg';
 import kneeIcon from '../../assets/kneeicon.jpg';
@@ -39,6 +25,7 @@ import bronzeIcon from '../../assets/bronzeicon.jpg';
 import grassIcon from '../../assets/grassicon.jpg';
 import baseIcon from '../../assets/baseicon.jpg';
 import { PaintPot } from './Paint';
+import { Marine } from './marine';
 
 const colors = {
   blue: 'hue-rotate(40deg) brightness(50%) saturate(200%)',
@@ -70,133 +57,48 @@ const colors = {
     'hue-rotate(180deg) saturate(200%) brightness(70%) contrast(140%)',
 };
 
+const initialColour =
+  'hue-rotate(40deg) brightness(50%) saturate(0%) contrast(50%)';
 export function Chaos() {
-  const [primary, setPrimary] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
+  const [scheme, setScheme] = React.useState(
+    JSON.parse(localStorage.getItem('theme')) || {
+      primary: initialColour,
+      quart2: initialColour,
+      quart3: initialColour,
+      left: initialColour,
+      trim: initialColour,
+      rope: initialColour,
+      aquila: initialColour,
+      penant: initialColour,
+      jewel: initialColour,
+      skull: initialColour,
+      gunbelts: initialColour,
+      fist: initialColour,
+      knee: initialColour,
+      helmet: initialColour,
+      eyes: initialColour,
+      missiles: initialColour,
+      base: initialColour,
+      bronze: initialColour,
+      grass: initialColour,
+      muzzle: initialColour,
+    },
   );
-  const [quart2, setQuart2] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [quart3, setQuart3] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [trim, setTrim] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [rope, setRope] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [aquila, setAquila] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [penant, setPenant] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [jewel, setJewel] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [skull, setSkull] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [gunbelts, setGunbelts] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [fist, setFist] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [knee, setKnee] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [helmet, setHelmet] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [eyes, setEyes] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [highlight, setHighlight] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [missiles, setMissiles] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [base, setBase] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [bronze, setBronze] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [grass, setGrass] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [muzzle, setMuzzle] = React.useState(
-    'hue-rotate(40deg) brightness(50%) saturate(200%)',
-  );
-  const [part, setPart] = React.useState(0);
+
+  const [part, setPart] = React.useState('primary');
+  const modelSize = 200;
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(scheme));
+  }, [scheme]);
 
   function setColor(color) {
-    switch (part) {
-      case 1:
-        setTrim(color);
-        break;
-      case 2:
-        setAquila(color);
-        break;
-      case 3:
-        setRope(color);
-        break;
-      case 4:
-        setPenant(color);
-        break;
-      case 5:
-        setJewel(color);
-        break;
-      case 6:
-        setSkull(color);
-        break;
-      case 7:
-        setGunbelts(color);
-        break;
-      case 8:
-        setHelmet(color);
-        break;
-      case 9:
-        setEyes(color);
-        break;
-      case 10:
-        setMissiles(color);
-        break;
-      case 11:
-        setBase(color);
-        break;
-      case 12:
-        setGrass(color);
-        break;
-      case 13:
-        setBronze(color);
-        break;
-      case 14:
-        setMuzzle(color);
-        break;
-      case 15:
-        setFist(color);
-        break;
-      case 16:
-        setKnee(color);
-        break;
-      case 17:
-        setQuart2(color);
-        break;
-      case 18:
-        setQuart3(color);
-        break;
-      case 19:
-        setHighlight(color);
-        break;
-      default:
-        setPrimary(color);
-        break;
-    }
+    const schemeCopy = { ...scheme };
+    schemeCopy[`${part}`] = color;
+    setScheme({ ...schemeCopy });
+    const stringObj = JSON.stringify(schemeCopy);
+    localStorage.setItem('theme', JSON.stringify(stringObj));
   }
+
   return (
     <div
       style={{
@@ -226,103 +128,104 @@ export function Chaos() {
           <img
             src={primayIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(0)}
+            onClick={() => setPart('primary')}
           />
           <img
             src={quart2Icon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(17)}
+            onClick={() => setPart('quart2')}
           />
           <img
             src={quart3Icon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(18)}
+            onClick={() => setPart('quart3')}
           />
 
           <img
-            src={quart3Icon}
+            src={leftIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(19)}
+            onClick={() => setPart('left')}
           />
+
           <img
             src={trimIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(1)}
+            onClick={() => setPart('trim')}
           />
           <img
             src={fistIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(15)}
+            onClick={() => setPart('fist')}
           />
           <img
             src={kneeIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(16)}
+            onClick={() => setPart('knee')}
           />
           <img
             src={aquilaIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(2)}
+            onClick={() => setPart('aquila')}
           />
           <img
             src={ropeIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(3)}
+            onClick={() => setPart('rope')}
           />
           <img
             src={pendantIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(4)}
+            onClick={() => setPart('penant')}
           />
           <img
             src={jewelIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(5)}
+            onClick={() => setPart('jewel')}
           />
           <img
             src={skullsIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(6)}
+            onClick={() => setPart('skull')}
           />
           <img
             src={gunbeltIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(7)}
+            onClick={() => setPart('gunbelts')}
           />
           <img
             src={muzzleIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(14)}
+            onClick={() => setPart('muzzle')}
           />
           <img
             src={bronzeIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(13)}
+            onClick={() => setPart('bronze')}
           />
           <img
             src={helmetIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(8)}
+            onClick={() => setPart('helmet')}
           />
           <img
             src={eyesIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(9)}
+            onClick={() => setPart('eyes')}
           />
           <img
             src={missilesIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(10)}
+            onClick={() => setPart('missiles')}
           />
           <img
             src={baseIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(11)}
+            onClick={() => setPart('base')}
           />
           <img
             src={grassIcon}
             style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart(12)}
+            onClick={() => setPart('grass')}
           />
         </div>
         <div
@@ -465,6 +368,7 @@ export function Chaos() {
               onClick={() => setColor(colors.black)}
             />
           </div>
+          <Marine scheme={scheme} modelSize={modelSize} />
 
           <div
             style={{
@@ -474,86 +378,38 @@ export function Chaos() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              position: 'relative',
             }}
           >
             <img
-              src={chaos}
-              style={{ maxWidth: 300, filter: primary, position: 'absolute' }}
-            />
-
+              src={orcImg}
+              style={{
+                maxWidth: modelSize,
+                filter: scheme.primary,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+              }}
+            />{' '}
             <img
-              src={quart2Img}
-              style={{ maxWidth: 300, filter: quart2, position: 'absolute' }}
-            />
-
-            <img
-              src={quart3Img}
-              style={{ maxWidth: 300, filter: quart3, position: 'absolute' }}
-            />
-            <img
-              src={chaosSecondary}
-              style={{ maxWidth: 300, filter: trim, position: 'absolute' }}
-            />
-
-            <img
-              src={aquilaImg}
-              style={{ maxWidth: 300, filter: aquila, position: 'absolute' }}
+              src={orcTrim}
+              style={{
+                maxWidth: modelSize,
+                filter: scheme.trim,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+              }}
             />
             <img
-              src={kneeImg}
-              style={{ maxWidth: 300, filter: knee, position: 'absolute' }}
-            />
-            <img
-              src={ropeImg}
-              style={{ maxWidth: 300, filter: rope, position: 'absolute' }}
-            />
-            <img
-              src={penantImg}
-              style={{ maxWidth: 300, filter: penant, position: 'absolute' }}
-            />
-            <img
-              src={jewelImg}
-              style={{ maxWidth: 300, filter: jewel, position: 'absolute' }}
-            />
-            <img
-              src={helmetImg}
-              style={{ maxWidth: 300, filter: helmet, position: 'absolute' }}
-            />
-            <img
-              src={eyesImg}
-              style={{ maxWidth: 300, filter: eyes, position: 'absolute' }}
-            />
-            <img
-              src={skullImg}
-              style={{ maxWidth: 300, filter: skull, position: 'absolute' }}
-            />
-            <img
-              src={missilesImg}
-              style={{ maxWidth: 300, filter: missiles, position: 'absolute' }}
-            />
-            <img
-              src={gunbeltsImg}
-              style={{ maxWidth: 300, filter: gunbelts, position: 'absolute' }}
-            />
-            <img
-              src={bronzeImg}
-              style={{ maxWidth: 300, filter: bronze, position: 'absolute' }}
-            />
-            <img
-              src={muzzleImg}
-              style={{ maxWidth: 300, filter: muzzle, position: 'absolute' }}
-            />
-            <img
-              src={fistImg}
-              style={{ maxWidth: 300, filter: fist, position: 'absolute' }}
-            />
-            <img
-              src={baseImg}
-              style={{ maxWidth: 300, filter: base, position: 'absolute' }}
-            />
-            <img
-              src={grassImg}
-              style={{ maxWidth: 300, filter: grass, position: 'absolute' }}
+              src={orcPenant}
+              style={{
+                maxWidth: modelSize,
+                filter: scheme.penant,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+              }}
             />
           </div>
         </div>
