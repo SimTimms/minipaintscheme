@@ -86,7 +86,7 @@ export function Chaos() {
   );
 
   const [part, setPart] = React.useState('primary');
-  const modelSize = 200;
+  const modelSize = 300;
   useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(scheme));
   }, [scheme]);
