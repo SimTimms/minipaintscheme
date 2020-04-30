@@ -26,6 +26,7 @@ import grassIcon from '../../assets/grassicon.jpg';
 import baseIcon from '../../assets/baseicon.jpg';
 import { PaintPot } from './Paint';
 import { Marine } from './marine';
+import { ChaosMarine } from './chaos';
 
 const colors = {
   blue: 'hue-rotate(40deg) brightness(50%) saturate(200%)',
@@ -368,50 +369,7 @@ export function Chaos() {
               onClick={() => setColor(colors.black)}
             />
           </div>
-          <Marine scheme={scheme} modelSize={modelSize} />
-
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              background: '#fff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-            }}
-          >
-            <img
-              src={orcImg}
-              style={{
-                maxWidth: modelSize,
-                filter: scheme.primary,
-                position: 'absolute',
-                top: 0,
-                left: 0,
-              }}
-            />{' '}
-            <img
-              src={orcTrim}
-              style={{
-                maxWidth: modelSize,
-                filter: scheme.trim,
-                position: 'absolute',
-                top: 0,
-                left: 0,
-              }}
-            />
-            <img
-              src={orcPenant}
-              style={{
-                maxWidth: modelSize,
-                filter: scheme.penant,
-                position: 'absolute',
-                top: 0,
-                left: 0,
-              }}
-            />
-          </div>
+          <ChaosMarine scheme={scheme} modelSize={modelSize} />
         </div>
       </div>
     </div>
