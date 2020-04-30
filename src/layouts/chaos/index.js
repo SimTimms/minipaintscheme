@@ -370,6 +370,7 @@ export function Chaos() {
             />
           </div>
           <ChaosMarine scheme={scheme} modelSize={modelSize} />
+          <Marine scheme={scheme} modelSize={modelSize} />
         </div>
       </div>
     </div>

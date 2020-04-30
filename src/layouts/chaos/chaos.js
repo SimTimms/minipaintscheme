@@ -3,16 +3,16 @@ import chaos from '../../assets/chaos-primary.png';
 import chaosSecondary from '../../assets/chaos-trim.png';
 import ropeImg from '../../assets/agressor-rope.png';
 import aquilaImg from '../../assets/agressor-aquila.png';
-import penantImg from '../../assets/agressor-penant.png';
+import penantImg from '../../assets/chaos-pendant.png';
 import jewelImg from '../../assets/agressor-jewel.png';
 import skullImg from '../../assets/agressor-skulls.png';
 import leftImg from '../../assets/leftshoulder.png';
-import gunbeltsImg from '../../assets/agressor-gunbelts.png';
+import gunbeltsImg from '../../assets/chaos-hair.png';
 import helmetImg from '../../assets/agressor-helmet.png';
 import quart2Img from '../../assets/chaos-quart2.png';
 import quart3Img from '../../assets/chaos-quart3.png';
 import eyesImg from '../../assets/agressor-eyes.png';
-import missilesImg from '../../assets/agressor-missiles.png';
+import missilesImg from '../../assets/chaos-tabard.png';
 import grassImg from '../../assets/agressor-grass.png';
 import baseImg from '../../assets/agressor-base.png';
 import fistImg from '../../assets/fist.png';
@@ -120,6 +120,7 @@ export function ChaosMarine({ scheme, modelSize }) {
           left: 0,
         }}
       />
+      */}
       <img
         src={penantImg}
         style={{
@@ -130,6 +131,7 @@ export function ChaosMarine({ scheme, modelSize }) {
           left: 0,
         }}
       />
+      {/*
       <img
         src={jewelImg}
         style={{
@@ -169,7 +171,7 @@ export function ChaosMarine({ scheme, modelSize }) {
           top: 0,
           left: 0,
         }}
-      />
+      />*/}
       <img
         src={missilesImg}
         style={{
@@ -190,7 +192,7 @@ export function ChaosMarine({ scheme, modelSize }) {
           left: 0,
         }}
       />
-      */}
+
       <img
         src={bronzeImg}
         style={{
