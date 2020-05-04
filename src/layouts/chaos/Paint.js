@@ -18,12 +18,12 @@ export function PaintPot({ name, color, setColor }) {
           left: 0,
           top: 0,
         }}
-        onClick={() => setColor(color)}
+        onClick={() => setColor(color, name)}
       />
       <img
         src={paintLid}
         style={{ width: 40, zIndex: 0, position: 'absolute', left: 0, top: 0 }}
-        onClick={() => setColor(color)}
+        onClick={() => setColor(color, name)}
       />
       {/*
       <Typography

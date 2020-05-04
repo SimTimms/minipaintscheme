@@ -101,9 +101,10 @@ export function Chaos() {
     localStorage.setItem('theme', JSON.stringify(scheme));
   }, [scheme]);
 
-  function setColor(color) {
+  function setColor(color, name) {
     const schemeCopy = { ...scheme };
     schemeCopy[`${part}`] = color;
+    schemeCopy[`${part}Name`] = name;
     setScheme({ ...schemeCopy });
     const stringObj = JSON.stringify(schemeCopy);
     localStorage.setItem('theme', JSON.stringify(stringObj));
@@ -126,7 +127,7 @@ export function Chaos() {
           display: 'flex',
         }}
       >
-        <Menu setPart={setPart} model={model} />
+        <Menu setPart={setPart} model={model} scheme={scheme} />
         <div
           style={{
             width: '100%',

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
 import aquilaIcon from '../../assets/aquilaicon.jpg';
 import ropeIcon from '../../assets/ropeicon.jpg';
 import pendantIcon from '../../assets/pendanticon.jpg';
@@ -31,8 +30,9 @@ import scionWeaponIcon from '../../assets/scion/scion-weapon-icon.png';
 import scionBronzeIcon from '../../assets/scion/scion-bronze-icon.png';
 import scionRollIcon from '../../assets/scion/scion-roll-icon.png';
 import scionKneeIcon from '../../assets/scion/scion-knee-icon.png';
+import { MenuPart } from './menuPart';
 
-export function Menu({ setPart, model }) {
+export function Menu({ setPart, model, scheme }) {
   return (
     <div
       style={{
@@ -53,108 +53,166 @@ export function Menu({ setPart, model }) {
             overflow: 'auto',
           }}
         >
-          <img
-            src={primayIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('primary')}
-          />
-          <img
-            src={quart2Icon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('quart2')}
-          />
-          <img
-            src={quart3Icon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('quart3')}
-          />
-
-          <img
-            src={leftIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('left')}
-          />
-
-          <img
-            src={trimIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('trim')}
-          />
-          <img
-            src={fistIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('fist')}
-          />
-          <img
-            src={kneeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('knee')}
-          />
-          <img
-            src={aquilaIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('aquila')}
-          />
-          <img
-            src={ropeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('rope')}
-          />
-          <img
-            src={pendantIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('penant')}
-          />
-          <img
-            src={jewelIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('jewel')}
-          />
-          <img
-            src={skullsIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('skull')}
-          />
-          <img
-            src={gunbeltIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('gunbelts')}
-          />
-          <img
-            src={muzzleIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('muzzle')}
-          />
-          <img
-            src={bronzeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('bronze')}
-          />
-          <img
-            src={helmetIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('helmet')}
-          />
-          <img
-            src={eyesIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('eyes')}
-          />
-          <img
-            src={missilesIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('missiles')}
-          />
-          <img
-            src={baseIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('base')}
-          />
-          <img
-            src={grassIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('grass')}
-          />
+          <div style={{ display: 'flex' }}>
+            <img
+              src={primayIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('primary')}
+            />
+            <MenuPart scheme={scheme.primary} name={scheme.primaryName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={quart2Icon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('quart2')}
+            />
+            <MenuPart scheme={scheme.quart2} name={scheme.quart2Name} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={quart3Icon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('quart3')}
+            />
+            <MenuPart scheme={scheme.quart3} name={scheme.quart3Name} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={leftIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('left')}
+            />
+            <MenuPart scheme={scheme.left} name={scheme.leftName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={trimIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('trim')}
+            />
+            <MenuPart scheme={scheme.trim} name={scheme.trimName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={fistIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('fist')}
+            />
+            <MenuPart scheme={scheme.fist} name={scheme.fistName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={kneeIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('knee')}
+            />
+            <MenuPart scheme={scheme.knee} name={scheme.kneeName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={aquilaIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('aquila')}
+            />
+            <MenuPart scheme={scheme.aquila} name={scheme.aquilaName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={ropeIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('rope')}
+            />
+            <MenuPart scheme={scheme.rope} name={scheme.ropeName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={pendantIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('penant')}
+            />
+            <MenuPart scheme={scheme.penant} name={scheme.penantName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={jewelIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('jewel')}
+            />
+            <MenuPart scheme={scheme.jewel} name={scheme.jewelName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={skullsIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('skull')}
+            />
+            <MenuPart scheme={scheme.skull} name={scheme.skullName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={gunbeltIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('gunbelts')}
+            />
+            <MenuPart scheme={scheme.gunbelts} name={scheme.gunbeltsName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={muzzleIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('muzzle')}
+            />
+            <MenuPart scheme={scheme.muzzle} name={scheme.muzzleName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={bronzeIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('bronze')}
+            />
+            <MenuPart scheme={scheme.bronze} name={scheme.bronzeName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={helmetIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('helmet')}
+            />
+            <MenuPart scheme={scheme.helmet} name={scheme.helmetName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={eyesIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('eyes')}
+            />
+            <MenuPart scheme={scheme.eyes} name={scheme.eyesName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={missilesIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('missiles')}
+            />
+            <MenuPart scheme={scheme.missiles} name={scheme.missilesName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={baseIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('base')}
+            />
+            <MenuPart scheme={scheme.base} name={scheme.baseName} />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <img
+              src={grassIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('grass')}
+            />
+            <MenuPart scheme={scheme.grass} name={scheme.grassName} />
+          </div>
         </div>
       ) : (
         <div
