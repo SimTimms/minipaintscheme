@@ -1,34 +1,13 @@
 import React, { useEffect } from 'react';
 
-import orcImg from '../../assets/orc-primary.png';
-import orcPenant from '../../assets/orc-penant.png';
-import orcTrim from '../../assets/orc-trim.png';
-import paintImg from '../../assets/paint.png';
-import aquilaIcon from '../../assets/aquilaicon.jpg';
-import ropeIcon from '../../assets/ropeicon.jpg';
-import pendantIcon from '../../assets/pendanticon.jpg';
-import skullsIcon from '../../assets/skullsicon.jpg';
-import leftIcon from '../../assets/leftshouldericon.jpg';
-import primayIcon from '../../assets/primaryicon.jpg';
-import helmetIcon from '../../assets/helmeticon.jpg';
-import kneeIcon from '../../assets/kneeicon.jpg';
-import muzzleIcon from '../../assets/muzzleicon.jpg';
-import fistIcon from '../../assets/fisticon.jpg';
-import trimIcon from '../../assets/trimicon.jpg';
-import quart2Icon from '../../assets/quart2icon.jpg';
-import quart3Icon from '../../assets/quart3icon.jpg';
-import missilesIcon from '../../assets/missilesicon.jpg';
-import jewelIcon from '../../assets/jewelicon.jpg';
-import eyesIcon from '../../assets/eyesicon.jpg';
-import gunbeltIcon from '../../assets/gunbelticon.jpg';
-import bronzeIcon from '../../assets/bronzeicon.jpg';
-import grassIcon from '../../assets/grassicon.jpg';
-import baseIcon from '../../assets/baseicon.jpg';
 import { PaintPot } from './Paint';
 import { Marine } from './marine';
+import { Scion } from './scion';
 import { ChaosMarine } from './chaos';
 import chaosmarine from '../../assets/chaosmarine.png';
 import marine from '../../assets/marine.png';
+import scion from '../../assets/scion/scionicon.png';
+import { Menu } from './menu';
 
 const colors = {
   blue: 'hue-rotate(40deg) brightness(50%) saturate(200%)',
@@ -45,19 +24,46 @@ const colors = {
   silver: 'hue-rotate(0deg) saturate(0%) brightness(120%)',
   white: 'hue-rotate(0deg) saturate(0%) brightness(200%)',
   corvus: 'hue-rotate(300deg) saturate(0%) brightness(30%)',
-  black: 'hue-rotate(300deg) saturate(0%) brightness(20%)',
+  abaddon: 'hue-rotate(300deg) saturate(0%) brightness(20%) contrast(100%)',
   xv88: 'hue-rotate(226.8deg) saturate(100%) brightness(70.7%)',
   caliban: 'hue-rotate(316.8deg) saturate(100%) brightness(30.7%)',
   jokaero: 'hue-rotate(190deg) saturate(200%) brightness(100%)',
-  wraithbone: 'hue-rotate(230deg) saturate(50%) brightness(200%)',
-  fang: 'hue-rotate(45deg) saturate(70%) brightness(70%)',
+  wraithbone: 'hue-rotate(230deg) saturate(30%) brightness(160%)',
+  morghast: 'hue-rotate(230deg) saturate(60%) brightness(120%)',
+  fang: 'hue-rotate(35deg) saturate(60%) brightness(70%)',
   retributor: 'hue-rotate(230deg) saturate(120%) brightness(150%)',
   averland: 'hue-rotate(220deg) saturate(120%) brightness(150%)',
   leadbelcher: 'hue-rotate(0deg) saturate(0%) brightness(90%) contrast(180%)',
+  greyknights: 'hue-rotate(40deg) saturate(10%) brightness(90%) contrast(200%)',
   deathguard: 'hue-rotate(290deg) saturate(30%) brightness(90%) ',
+  deathworld: 'hue-rotate(280deg) saturate(50%) brightness(70%) ',
+  castellan: 'hue-rotate(300deg) saturate(50%) brightness(50%) ',
+  deathkorp: 'hue-rotate(300deg) saturate(10%) brightness(50%) ',
   warplock: 'hue-rotate(200deg) saturate(30%) brightness(90%) contrast(200%)',
+  aethermatic:
+    'hue-rotate(10deg) saturate(100%) brightness(90%) contrast(100%)',
+  corax: 'hue-rotate(10deg) saturate(0%) brightness(200%) contrast(100%)',
+  greyseer: 'hue-rotate(10deg) saturate(0%) brightness(100%) contrast(100%)',
+  celestra: 'hue-rotate(10deg) saturate(30%) brightness(100%) contrast(100%)',
   bloodangels:
     'hue-rotate(180deg) saturate(200%) brightness(70%) contrast(140%)',
+  khorne: 'hue-rotate(180deg) saturate(200%) brightness(44%) contrast(100%)',
+  galvorbak: 'hue-rotate(160deg) saturate(200%) brightness(44%) contrast(100%)',
+  baraknar: 'hue-rotate(160deg) saturate(200%) brightness(34%) contrast(100%)',
+  screamer: 'hue-rotate(160deg) saturate(200%) brightness(54%) contrast(100%)',
+  deamonette: 'hue-rotate(80deg) saturate(60%) brightness(64%) contrast(100%)',
+  phoenician:
+    'hue-rotate(110deg) saturate(100%) brightness(44%) contrast(100%)',
+  naggaroth: 'hue-rotate(110deg) saturate(50%) brightness(44%) contrast(100%)',
+  caledor: 'hue-rotate(44deg) saturate(80%) brightness(80%) contrast(100%)',
+  macragge: 'hue-rotate(50deg) saturate(120%) brightness(50%) contrast(100%)',
+  kantor: 'hue-rotate(55deg) saturate(130%) brightness(30%) ',
+  nightlords: 'hue-rotate(50deg) saturate(120%) brightness(44%) ',
+  thousandsons: 'hue-rotate(30deg) saturate(120%) brightness(50%) ',
+  stegadon: 'hue-rotate(30deg) saturate(120%) brightness(36%) ',
+  lupercal: 'hue-rotate(10deg) saturate(100%) brightness(36%) ',
+  incubi: 'hue-rotate(0deg) saturate(100%) brightness(36%) ',
+  mephiston: 'hue-rotate(180deg) saturate(200%) brightness(64%) contrast(100%)',
 };
 
 const initialColour =
@@ -120,118 +126,7 @@ export function Chaos() {
           display: 'flex',
         }}
       >
-        <div
-          style={{
-            height: '100%',
-            background: '#222',
-            display: 'flex',
-            flexDirection: 'column',
-            overflow: 'auto',
-          }}
-        >
-          <img
-            src={primayIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('primary')}
-          />
-          <img
-            src={quart2Icon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('quart2')}
-          />
-          <img
-            src={quart3Icon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('quart3')}
-          />
-
-          <img
-            src={leftIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('left')}
-          />
-
-          <img
-            src={trimIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('trim')}
-          />
-          <img
-            src={fistIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('fist')}
-          />
-          <img
-            src={kneeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('knee')}
-          />
-          <img
-            src={aquilaIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('aquila')}
-          />
-          <img
-            src={ropeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('rope')}
-          />
-          <img
-            src={pendantIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('penant')}
-          />
-          <img
-            src={jewelIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('jewel')}
-          />
-          <img
-            src={skullsIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('skull')}
-          />
-          <img
-            src={gunbeltIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('gunbelts')}
-          />
-          <img
-            src={muzzleIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('muzzle')}
-          />
-          <img
-            src={bronzeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('bronze')}
-          />
-          <img
-            src={helmetIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('helmet')}
-          />
-          <img
-            src={eyesIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('eyes')}
-          />
-          <img
-            src={missilesIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('missiles')}
-          />
-          <img
-            src={baseIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('base')}
-          />
-          <img
-            src={grassIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
-            onClick={() => setPart('grass')}
-          />
-        </div>
+        <Menu setPart={setPart} model={model} />
         <div
           style={{
             width: '100%',
@@ -247,9 +142,152 @@ export function Chaos() {
               justifyContent: 'space-around',
               alignItems: 'center',
               flexWrap: 'wrap',
+              background: '#222',
+              paddingRight: 10,
+              boxSizing: 'border-box',
             }}
           >
             <PaintPot name="XV88" color={colors.xv88} setColor={setColor} />
+            <PaintPot
+              name="Corax White"
+              color={colors.corax}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Grey Seer"
+              color={colors.greyseer}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Celestra Grey"
+              color={colors.celestra}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Averland Sunset"
+              color={colors.averland}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Jokaero Orange"
+              color={colors.jokaero}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Khorne Red"
+              color={colors.khorne}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Mephiston Red"
+              color={colors.mephiston}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Gal Vorbak Red"
+              color={colors.galvorbak}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Barak Nar Burgundy"
+              color={colors.baraknar}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Screamer Pink"
+              color={colors.screamer}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Daemonette Hide"
+              color={colors.deamonette}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Phoenician Purple"
+              color={colors.phoenician}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Naggaroth Night"
+              color={colors.naggaroth}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Caledor Sky"
+              color={colors.caledor}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Macragge Blue"
+              color={colors.macragge}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Kantor Blue"
+              color={colors.kantor}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Night Lords Blue"
+              color={colors.nightlords}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Thousand Sons Blue"
+              color={colors.thousandsons}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Stegadon Scale Green"
+              color={colors.stegadon}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Lupercal Green"
+              color={colors.lupercal}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Incubi Darkness"
+              color={colors.incubi}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Deathguard"
+              color={colors.deathguard}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Deathworld Forest"
+              color={colors.deathworld}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Castellan Green"
+              color={colors.castellan}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Death Korps Drab"
+              color={colors.deathkorp}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Corvus Black"
+              color={colors.corvus}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Abaddon Black"
+              color={colors.abaddon}
+              setColor={setColor}
+            />
+            <PaintPot
+              name="Aethermatic Blue"
+              color={colors.aethermatic}
+              setColor={setColor}
+            />
             <PaintPot
               name="Blood Angels Red"
               color={colors.bloodangels}
@@ -261,13 +299,13 @@ export function Chaos() {
               setColor={setColor}
             />
             <PaintPot
-              name="Jokaero Orange"
-              color={colors.jokaero}
-              setColor={setColor}
-            />
-            <PaintPot
               name="Wraithbone"
               color={colors.wraithbone}
+              setColor={setColor}
+            />{' '}
+            <PaintPot
+              name="Morghast"
+              color={colors.morghast}
               setColor={setColor}
             />
             <PaintPot name="The Fang" color={colors.fang} setColor={setColor} />
@@ -277,18 +315,13 @@ export function Chaos() {
               setColor={setColor}
             />
             <PaintPot
-              name="Averland Sunset"
-              color={colors.averland}
-              setColor={setColor}
-            />
-            <PaintPot
               name="Leadbelcher"
               color={colors.leadbelcher}
               setColor={setColor}
             />
             <PaintPot
-              name="Deathguard"
-              color={colors.deathguard}
+              name="Grey Knights Steel"
+              color={colors.greyknights}
               setColor={setColor}
             />
             <PaintPot
@@ -296,82 +329,6 @@ export function Chaos() {
               color={colors.warplock}
               setColor={setColor}
             />
-            {/*}
-            <img
-              src={paintImg}
-              style={{ filter: colors.teal, width: 40 }}
-              onClick={() => setColor(colors.teal)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.blue, width: 40 }}
-              onClick={() => setColor(colors.blue)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.ultramarine, width: 40 }}
-              onClick={() => setColor(colors.ultramarine)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.purple, width: 40 }}
-              onClick={() => setColor(colors.purple)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.pink, width: 40 }}
-              onClick={() => setColor(colors.pink)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.red, width: 40 }}
-              onClick={() => setColor(colors.red)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.darkRed, width: 40 }}
-              onClick={() => setColor(colors.darkRed)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.orange, width: 40 }}
-              onClick={() => setColor(colors.orange)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.yellow, width: 40 }}
-              onClick={() => setColor(colors.yellow)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.scorpion, width: 40 }}
-              onClick={() => setColor(colors.scorpion)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.green, width: 40 }}
-              onClick={() => setColor(colors.green)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.silver, width: 40 }}
-              onClick={() => setColor(colors.silver)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.white, width: 40 }}
-              onClick={() => setColor(colors.white)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.corvus, width: 40 }}
-              onClick={() => setColor(colors.corvus)}
-            />
-            <img
-              src={paintImg}
-              style={{ filter: colors.black, width: 40 }}
-              onClick={() => setColor(colors.black)}
-          />*/}
           </div>
           <div
             style={{
@@ -397,9 +354,16 @@ export function Chaos() {
               style={{ width: 80, padding: 10, margin: 10 }}
               onClick={() => setModel('chaos')}
             />
+            <img
+              src={scion}
+              style={{ width: 80, padding: 10, margin: 10 }}
+              onClick={() => setModel('scion')}
+            />
           </div>
           {model === 'chaos' ? (
             <ChaosMarine scheme={scheme} modelSize={modelSize} />
+          ) : model === 'scion' ? (
+            <Scion scheme={scheme} modelSize={modelSize} />
           ) : (
             <Marine scheme={scheme} modelSize={modelSize} />
           )}
