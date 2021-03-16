@@ -31,7 +31,8 @@ const colors = {
   wraithbone: 'hue-rotate(230deg) saturate(30%) brightness(160%)',
   morghast: 'hue-rotate(230deg) saturate(60%) brightness(120%)',
   fang: 'hue-rotate(35deg) saturate(60%) brightness(70%)',
-  retributor: 'hue-rotate(230deg) saturate(120%) brightness(150%)',
+  retributor:
+    'hue-rotate(225deg) saturate(120%) brightness(120%) contrast(120%)',
   averland: 'hue-rotate(220deg) saturate(120%) brightness(150%)',
   leadbelcher: 'hue-rotate(0deg) saturate(0%) brightness(90%) contrast(180%)',
   greyknights: 'hue-rotate(40deg) saturate(10%) brightness(90%) contrast(200%)',
