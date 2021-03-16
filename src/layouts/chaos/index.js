@@ -43,7 +43,7 @@ const colors = {
   warplock: 'hue-rotate(200deg) saturate(30%) brightness(90%) contrast(200%)',
   aethermatic:
     'hue-rotate(10deg) saturate(100%) brightness(90%) contrast(100%)',
-  corax: 'hue-rotate(10deg) saturate(0%) brightness(200%) contrast(100%)',
+  corax: 'hue-rotate(10deg) saturate(0%) brightness(190%) contrast(100%)',
   greyseer: 'hue-rotate(10deg) saturate(0%) brightness(100%) contrast(100%)',
   celestra: 'hue-rotate(10deg) saturate(30%) brightness(100%) contrast(100%)',
   bloodangels:
