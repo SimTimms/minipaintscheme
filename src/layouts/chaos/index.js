@@ -92,7 +92,7 @@ export function Chaos() {
       bronze: initialColour,
       grass: initialColour,
       muzzle: initialColour,
-    },
+    }
   );
 
   const [part, setPart] = React.useState('primary');
@@ -127,7 +127,7 @@ export function Chaos() {
           display: 'flex',
         }}
       >
-        <Menu setPart={setPart} model={model} scheme={scheme} />
+        <Menu setPart={setPart} model={model} scheme={scheme} part={part} />
         <div
           style={{
             width: '100%',
@@ -341,7 +341,7 @@ export function Chaos() {
               flexWrap: 'wrap',
             }}
           >
-            <img
+            {/*     <img
               src={marine}
               style={{
                 width: 80,
@@ -350,16 +350,16 @@ export function Chaos() {
               }}
               onClick={() => setModel('marine')}
             />
-            <img
+          <img
               src={chaosmarine}
               style={{ width: 80, padding: 10, margin: 10 }}
               onClick={() => setModel('chaos')}
-            />
+           />
             <img
               src={scion}
               style={{ width: 80, padding: 10, margin: 10 }}
               onClick={() => setModel('scion')}
-            />
+            />*/}
           </div>
           {model === 'chaos' ? (
             <ChaosMarine scheme={scheme} modelSize={modelSize} />

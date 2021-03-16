@@ -1,7 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-export function MenuPart({ scheme, name }) {
+export function MenuPart({ scheme, paint, part, partName }) {
+  console.log(scheme, part);
   return (
     <div
       style={{
@@ -25,7 +26,7 @@ export function MenuPart({ scheme, name }) {
         variant="body1"
         style={{ color: '#fff', fontSize: 10, marginLeft: 10 }}
       >
-        {name}
+        {paint ? paint : part === partName ? 'Choose Paint' : 'empty'}
       </Typography>
     </div>
   );
