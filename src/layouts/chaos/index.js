@@ -342,6 +342,47 @@ export function Chaos() {
           </div>
           <div
             style={{
+              display: 'flex',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <button
+              style={{
+                background: '#222',
+                border: 'none',
+                color: '#ddd',
+                padding: 3,
+                margin: 3,
+                cursor: 'pointer',
+                width: 80,
+                borderRadius: 4,
+                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
+              }}
+              onClick={() => setModel('marine')}
+            >
+              Aggressor
+            </button>
+            <button
+              style={{
+                background: '#222',
+                border: 'none',
+                color: '#ddd',
+                padding: 3,
+                margin: 3,
+                cursor: 'pointer',
+                width: 80,
+                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
+                borderRadius: 4,
+              }}
+              onClick={() => setModel('scion')}
+            >
+              Scion
+            </button>
+          </div>
+          <div
+            style={{
               width: '100%',
               display: 'flex',
               flexDirection: 'row',

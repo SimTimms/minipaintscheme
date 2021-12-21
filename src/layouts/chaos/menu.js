@@ -43,34 +43,6 @@ export function Menu({ setPart, model, scheme, part, setModel }) {
         overflow: 'auto',
       }}
     >
-      <button
-        style={{
-          background: 'none',
-          border: 'none',
-          color: '#fff',
-          textDecoration: 'underline',
-          padding: 3,
-          textAlign: 'left',
-          cursor: 'pointer',
-        }}
-        onClick={() => setModel('marine')}
-      >
-        Aggressor
-      </button>
-      <button
-        style={{
-          background: 'none',
-          border: 'none',
-          color: '#fff',
-          textDecoration: 'underline',
-          padding: 3,
-          cursor: 'pointer',
-          textAlign: 'left',
-        }}
-        onClick={() => setModel('scion')}
-      >
-        Scion
-      </button>
       {model === 'marine' ? (
         <div
           style={{
