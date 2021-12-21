@@ -4,6 +4,7 @@ import { PaintPot } from './Paint';
 import { Marine } from './marine';
 import { Scion } from './scion';
 import { ChaosMarine } from './chaos';
+import { Intercessor } from './intercessor';
 import chaosmarine from '../../assets/chaosmarine.png';
 import marine from '../../assets/marine.png';
 import scion from '../../assets/scion/scionicon.png';
@@ -98,6 +99,7 @@ export function Chaos() {
 
   const [part, setPart] = React.useState('primary');
   const modelSize = 300;
+  const bgModelSize = 280;
   useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(scheme));
   }, [scheme]);
@@ -128,7 +130,13 @@ export function Chaos() {
           display: 'flex',
         }}
       >
-        <Menu setPart={setPart} model={model} scheme={scheme} part={part} />
+        <Menu
+          setPart={setPart}
+          model={model}
+          scheme={scheme}
+          part={part}
+          setModel={setModel}
+        />
         <div
           style={{
             width: '100%',
@@ -338,37 +346,42 @@ export function Chaos() {
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-around',
-              alignItems: 'center',
+              alignItems: 'flex-end',
               flexWrap: 'wrap',
+              marginTop: 300,
             }}
           >
-            {/*     <img
-              src={marine}
+            {/*    <div
               style={{
-                width: 80,
-                padding: 10,
-                margin: 10,
+                width: '50%',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                flexWrap: 'wrap',
               }}
-              onClick={() => setModel('marine')}
-            />
-          <img
-              src={chaosmarine}
-              style={{ width: 80, padding: 10, margin: 10 }}
-              onClick={() => setModel('chaos')}
-           />
-            <img
-              src={scion}
-              style={{ width: 80, padding: 10, margin: 10 }}
-              onClick={() => setModel('scion')}
-            />*/}
+            >
+              <Intercessor scheme={scheme} modelSize={bgModelSize} />
+            </div>*/}
+            <div
+              style={{
+                width: '50%',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}
+            >
+              {model === 'chaos' ? (
+                <ChaosMarine scheme={scheme} modelSize={modelSize} />
+              ) : model === 'scion' ? (
+                <Scion scheme={scheme} modelSize={modelSize} />
+              ) : (
+                <Marine scheme={scheme} modelSize={modelSize} />
+              )}
+            </div>
           </div>
-          {model === 'chaos' ? (
-            <ChaosMarine scheme={scheme} modelSize={modelSize} />
-          ) : model === 'scion' ? (
-            <Scion scheme={scheme} modelSize={modelSize} />
-          ) : (
-            <Marine scheme={scheme} modelSize={modelSize} />
-          )}
         </div>
       </div>
     </div>

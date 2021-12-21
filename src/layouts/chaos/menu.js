@@ -32,7 +32,7 @@ import scionRollIcon from '../../assets/scion/scion-roll-icon.png';
 import scionKneeIcon from '../../assets/scion/scion-knee-icon.png';
 import { MenuPart } from './menuPart';
 
-export function Menu({ setPart, model, scheme, part }) {
+export function Menu({ setPart, model, scheme, part, setModel }) {
   return (
     <div
       style={{
@@ -43,6 +43,34 @@ export function Menu({ setPart, model, scheme, part }) {
         overflow: 'auto',
       }}
     >
+      <button
+        style={{
+          background: 'none',
+          border: 'none',
+          color: '#fff',
+          textDecoration: 'underline',
+          padding: 3,
+          textAlign: 'left',
+          cursor: 'pointer',
+        }}
+        onClick={() => setModel('marine')}
+      >
+        Aggressor
+      </button>
+      <button
+        style={{
+          background: 'none',
+          border: 'none',
+          color: '#fff',
+          textDecoration: 'underline',
+          padding: 3,
+          cursor: 'pointer',
+          textAlign: 'left',
+        }}
+        onClick={() => setModel('scion')}
+      >
+        Scion
+      </button>
       {model === 'marine' ? (
         <div
           style={{
@@ -361,61 +389,182 @@ export function Menu({ setPart, model, scheme, part }) {
             overflow: 'auto',
           }}
         >
-          <img
-            src={scionPrimaryIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('primary')}
-          />
-          <img
-            src={scionClothIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionPrimaryIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('primary')}
+            />
+            <MenuPart
+              scheme={scheme.primary}
+              paint={scheme.primaryName}
+              part={part}
+              partName="primary"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('quart2')}
-          />
-          <img
-            src={scionTrimIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionClothIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('quart2')}
+            />
+            <MenuPart
+              scheme={scheme.quart2}
+              paint={scheme.quart2Name}
+              part={part}
+              partName="quart2"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('trim')}
-          />
-          <img
-            src={scionBootsIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionTrimIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('trim')}
+            />
+            <MenuPart
+              scheme={scheme.trim}
+              paint={scheme.trimName}
+              part={part}
+              partName="trim"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('fist')}
-          />
-          <img
-            src={scionStrapIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionBootsIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('fist')}
+            />
+            <MenuPart
+              scheme={scheme.fist}
+              paint={scheme.fistName}
+              part={part}
+              partName="fist"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('rope')}
-          />
-          <img
-            src={scionHelmetIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionStrapIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('rope')}
+            />
+            <MenuPart
+              scheme={scheme.rope}
+              paint={scheme.ropeName}
+              part={part}
+              partName="rope"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('helmet')}
-          />
-          <img
-            src={scionEyesIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionHelmetIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('helmet')}
+            />
+            <MenuPart
+              scheme={scheme.helmet}
+              paint={scheme.helmetName}
+              part={part}
+              partName="helmet"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('eyes')}
-          />
-          <img
-            src={scionWeaponIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionEyesIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('eyes')}
+            />
+            <MenuPart
+              scheme={scheme.eyes}
+              paint={scheme.eyesName}
+              part={part}
+              partName="eyes"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('muzzle')}
-          />
-          <img
-            src={scionBronzeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionWeaponIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('muzzle')}
+            />
+            <MenuPart
+              scheme={scheme.muzzle}
+              paint={scheme.muzzleName}
+              part={part}
+              partName="muzzle"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('bronze')}
-          />
-          <img
-            src={scionRollIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionBronzeIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('bronze')}
+            />
+            <MenuPart
+              scheme={scheme.bronze}
+              paint={scheme.bronzeName}
+              part={part}
+              partName="bronze"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('jewel')}
-          />
-          <img
-            src={scionKneeIcon}
-            style={{ width: 80, margin: 2, cursor: 'pointer' }}
+          >
+            <img
+              src={scionRollIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('jewel')}
+            />
+            <MenuPart
+              scheme={scheme.jewel}
+              paint={scheme.jewelName}
+              part={part}
+              partName="jewel"
+            />
+          </div>
+          <div
+            style={{ display: 'flex', cursor: 'pointer' }}
             onClick={() => setPart('knee')}
-          />
+          >
+            <img
+              src={scionKneeIcon}
+              style={{ width: 80, margin: 2, cursor: 'pointer' }}
+              onClick={() => setPart('knee')}
+            />
+            <MenuPart
+              scheme={scheme.knee}
+              paint={scheme.kneeName}
+              part={part}
+              partName="knee"
+            />
+          </div>
         </div>
       )}
     </div>
