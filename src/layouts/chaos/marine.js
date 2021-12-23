@@ -9,6 +9,7 @@ import skullImg from '../../assets/agressor-skulls.png';
 import leftImg from '../../assets/leftshoulder.png';
 import gunbeltsImg from '../../assets/agressor-gunbelts.png';
 import helmetImg from '../../assets/agressor-helmet.png';
+import helmetXmasImg from '../../assets/agressor-xmas.png';
 import quart2Img from '../../assets/quart2.png';
 import quart3Img from '../../assets/quart3.png';
 import eyesImg from '../../assets/agressor-eyes.png';
@@ -20,7 +21,7 @@ import muzzleImg from '../../assets/muzzle.png';
 import bronzeImg from '../../assets/bronze.png';
 import kneeImg from '../../assets/knee.png';
 
-export function Marine({ scheme, modelSize }) {
+export function Marine({ scheme, modelSize, xmas }) {
   return (
     <div
       style={{
@@ -43,7 +44,6 @@ export function Marine({ scheme, modelSize }) {
           left: 'auto',
         }}
       />
-
       <img
         src={quart2Img}
         style={{
@@ -54,7 +54,6 @@ export function Marine({ scheme, modelSize }) {
           left: 'auto',
         }}
       />
-
       <img
         src={quart3Img}
         style={{
@@ -85,7 +84,6 @@ export function Marine({ scheme, modelSize }) {
           left: 'auto',
         }}
       />
-
       <img
         src={aquilaImg}
         style={{
@@ -146,6 +144,18 @@ export function Marine({ scheme, modelSize }) {
           left: 'auto',
         }}
       />
+      {xmas && (
+        <img
+          src={helmetXmasImg}
+          style={{
+            maxWidth: modelSize,
+            filter: scheme.helmetXmas,
+            position: 'absolute',
+            top: 'auto',
+            left: 'auto',
+          }}
+        />
+      )}
       <img
         src={eyesImg}
         style={{

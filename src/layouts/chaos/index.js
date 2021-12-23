@@ -72,6 +72,7 @@ const initialColour =
   'hue-rotate(40deg) brightness(50%) saturate(0%) contrast(50%)';
 export function Chaos() {
   const [model, setModel] = React.useState('marine');
+  const [xmas, setXmas] = React.useState(false);
   const [scheme, setScheme] = React.useState(
     JSON.parse(localStorage.getItem('theme')) || {
       primary: initialColour,
@@ -380,6 +381,22 @@ export function Chaos() {
             >
               Scion
             </button>
+            <button
+              style={{
+                background: '#222',
+                border: 'none',
+                color: '#ddd',
+                padding: 3,
+                margin: 3,
+                cursor: 'pointer',
+                width: 80,
+                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
+                borderRadius: 4,
+              }}
+              onClick={() => setXmas(xmas ? false : true)}
+            >
+              Xmas Hat
+            </button>
           </div>
           <div
             style={{
@@ -419,7 +436,7 @@ export function Chaos() {
               ) : model === 'scion' ? (
                 <Scion scheme={scheme} modelSize={modelSize} />
               ) : (
-                <Marine scheme={scheme} modelSize={modelSize} />
+                <Marine scheme={scheme} modelSize={modelSize} xmas={xmas} />
               )}
             </div>
           </div>
