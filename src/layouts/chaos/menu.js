@@ -43,7 +43,7 @@ export function Menu({ setPart, model, scheme, part, setModel }) {
         overflow: 'auto',
       }}
     >
-      {model === 'marine' ? (
+      {model === 'marine' || model === 'chaos' ? (
         <div
           style={{
             height: '100%',
