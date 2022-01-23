@@ -398,22 +398,28 @@ export function Chaos() {
             >
               Scion
             </button>
-            <button
-              style={{
-                background: '#222',
-                border: 'none',
-                color: '#ddd',
-                padding: 3,
-                margin: 3,
-                cursor: 'pointer',
-                width: 80,
-                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
-                borderRadius: 4,
-              }}
-              onClick={() => setXmas(xmas ? false : true)}
+            <a
+              href="https://minipainter3d.herokuapp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Xmas Hat
-            </button>
+              <button
+                style={{
+                  background: '#e62b58',
+                  border: 'none',
+                  color: '#fff',
+                  padding: 3,
+                  margin: 3,
+                  cursor: 'pointer',
+                  boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
+                  borderRadius: 4,
+                  whiteSpace: 'nowrap',
+                }}
+                onClick={() => null}
+              >
+                Try Mini-Painter 3d
+              </button>
+            </a>
           </div>
           <div
             style={{
